@@ -33,12 +33,12 @@ app.prepare()
 			return handler(req, res);
 		});
 
-		server.listen((port, err) => {
+		server.listen(port, (err) => {
 			if (err) throw err;
 			console.log(`> Ready on http://localhost:${port}`);
 		});
 	})
 	.catch((ex) => {
 		console.log(ex.stack);
-		process.exit;
+		process.exit(1);
 	});
